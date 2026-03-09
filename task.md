@@ -1,6 +1,8 @@
-# 新增資產流程開發
+# Task: Icon Generation and Integration
 
-- [x] 設計「新增資產」介面 (AddAssetScreen) `[x]`
-- [x] 整合資產類別與機構選擇邏輯 `[x]`
-- [x] 實現表單驗證與儲存邏輯 (初步存於記憶體) `[x]`
-- [x] 連結儀表板 + 按鈕至新增頁面 `[x]`
+- [x] Research existing icon configuration and dimensions <!-- id: 0 -->
+- [x] Generate "Sun and Treasure Chest" icon image <!-- id: 1 -->
+- [x] Process and resize icons for web (favicon, manifest icons) <!-- id: 2 -->
+- [x] Update `web/index.html` and `web/manifest.json` <!-- id: 3 -->
+- [x] (Optional) Update iOS native icons <!-- id: 4 -->
+- [x] Verify changes <!-- id: 5 -->

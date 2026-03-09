@@ -1,27 +1,31 @@
-# 實作「新增資產」流程計畫
+# Website Icon Generation and Integration
 
-本計畫旨在實作點擊儀表板右下角 `+` 按鈕後，彈出對應的介面讓使用者手動輸入資產資訊。
+Generate a new icon for the `asset_management` website featuring a big sun and a treasure chest, and integrate it across web and iOS (web-app) platforms.
 
-## 擬議變更
+## Proposed Changes
 
-### 表單設計 (動態欄位)
-- **[NEW] AddAssetScreen**: 實作具備動態邏輯的表單：
-    - **資產類別**: 現金、股票、基金、其他。
-    - **機構選擇 (Dynamic)**:
-        - 若為**現金**：提供台灣主要銀行選單（如：台銀、中信、國泰等）。
-        - 若為**股票**：提供台灣主要券商選單（如：元大、富邦、凱基等）。
-    - **名稱/代號 (Dynamic)**:
-        - 若為**現金**：預設選單「活存」、「定存」。
-        - 若為**股票**：手動輸入「股票代號」。
-    - **數值輸入 (Dynamic)**:
-        - 若為**現金**：輸入「金額」。
-        - 若為**股票**：輸入「股數」。
+### Icon Generation
+- Generate a 1024x1024 master icon using AI.
+- Create a Python script `resize_icons.py` to generate the following sizes:
+  - `web/favicon.png` (32x32)
+  - `web/icons/Icon-192.png` (192x192)
+  - `web/icons/Icon-512.png` (512x512)
+  - `web/icons/Icon-maskable-192.png` (192x192)
+  - `web/icons/Icon-maskable-512.png` (512x512)
 
-### 邏輯開發
-- **資料常量**: 建立 `lib/core/constants/institutions.dart` 存放銀行與券商清單。
-- **表單連動**: 使用 `StatefulWidget` 監聽類別切換，動態改變下方 UI 組件。
+### [MODIFY] [favicon.png](file:///d:/antigravity/asset_management/web/favicon.png)
+- Replace with new 32x32 icon.
 
-## 驗證計畫
-### 手動驗證
-- 點擊 Dashboard 的 `+` 按鈕，確認能正確導航至新增介面。
-- 輸入測試數據，確認驗證邏輯生效。
+### [MODIFY] [Icon-192.png](file:///d:/antigravity/asset_management/web/icons/Icon-192.png)
+### [MODIFY] [Icon-512.png](file:///d:/antigravity/asset_management/web/icons/Icon-512.png)
+### [MODIFY] [Icon-maskable-192.png](file:///d:/antigravity/asset_management/web/icons/Icon-maskable-192.png)
+### [MODIFY] [Icon-maskable-512.png](file:///d:/antigravity/asset_management/web/icons/Icon-maskable-512.png)
+- Replace with new icons.
+
+## Verification Plan
+
+### Automated Verification
+- Run a Python script to verify the dimensions of all generated icons.
+
+### Manual Verification
+- View the generated icons in the browser or file explorer to ensure visual quality.

@@ -1,74 +1,26 @@
-# Flutter 資產管理專案 - 新增資產流程完成
+# Icon Generation and Integration Walkthrough
 
-「新增資產」功能已開發完成，具備高度動態化的表單邏輯，能自動根據資產類別切換對應的金融機構與輸入欄位。
+I have successfully generated and integrated a new icon for the `asset_management` website.
 
-## 新增功能亮點
+## Changes Made
 
-### 1. 動態機構選單 (Dynamic Institution Selection)
-- **現金存款**：自動載入台灣主要銀行清單（如台銀、中信、國泰等）。
-- **股票證券**：自動載入台灣主要券商清單（如元大、富邦、凱基等）。
+### Icon Assets
+- Generated a high-resolution master icon featuring a sun and a treasure chest.
+- Resized the master icon into the following formats:
+  - `web/favicon.png` (32x32)
+  - `web/icons/Icon-192.png` (192x192)
+  - `web/icons/Icon-512.png` (512x512)
+  - `web/icons/Icon-maskable-192.png` (192x192)
+  - `web/icons/Icon-maskable-512.png` (512x512)
 
-### 2. 智慧欄位切換
-- **資產名稱/代號**：
-    - 現金：預設提供「活存」、「定存」選單。
-    - 股票：使用者手動輸入「股票代號」。
-- **數量單位**：
-    - 現金：顯示「金額」並附帶 `$` 符號。
-    - 股票：顯示「股數」。
+### Code Updates
+- Verified that `web/index.html` and `web/manifest.json` correctly reference these paths.
 
-### 3. UI/UX 連結
-- 已將首頁右下角的 `+` 按鈕正式連結至 `AddAssetScreen`。
-- 表單採用 Premium 深色設計風格，與整體專案視覺保持一致。
+## Verification Results
 
-## 驗證細節
-- [x] 點擊 `+` 按鈕正確跳轉。
-- [x] 切換「資產類別」時，下方機構與數值欄位即時變動。
-- [x] 表單驗證邏輯完整（必填檢查、數字格式檢查）。
+### Automated Verification
+- Icon resizing script completed successfully.
+- Verified file existence in `web/` and `web/icons/`.
 
-> [!TIP]
-> 您可以現在點擊右下角的 `+` 按鈕，親自體驗動態切換的流暢感。
-
-## 已完成的變更
-
-### 1. 專案基礎設施
-- **平台支援**: 已設定僅支援 **iOS** 與 **Web**。
-- **目錄結構**: 建立了符合 Clean Architecture 精神的目錄分層：
-    - `lib/core`: 主題、常量、工具類。
-    - `lib/data`: 數據模型 (Models) 與倉庫 (Repositories)。
-    - `lib/features`: 功能模組（目前包含儀表板 Dashboard）。
-
-### 2. 高級設計系統 (Premium Design System)
-- **AppTheme**: 定義了深色模式優先的配色方案（翡翠綠與皇家藍）。
-- **Typography**: 使用現代化的字體比例與粗細設定。
-
-### 3. 數據模型與資產管理
-- **資產分類**: 支援現金、股票、基金/ETF 與其他資產。
-- **群組化紀錄**:
-    - **現金**: 支援按「銀行」紀錄。
-    - **股票**: 支援按「券商」紀錄。
-- **加總邏輯**: 預留了跨機構統計與總額彙整的介面。
-
-### 5. 錯誤修復與優化
-- **UI 修正**: 修復了 `dashboard_screen.dart` 中的 `$` 符號轉義錯誤與 `InkWell` 參數錯誤。
-- **測試修正**: 更新了 `widget_test.dart` 以符合新的應用程式類別名稱。
-- **代碼清理**: 移除了未使用的引用。
-
-### 4. 儀表板雛形 (Dashboard Shell)
-- **總資產張貼**: 具備漸層視覺美感的資產總額顯示。
-- **類別導覽**: 直觀的資產類別網格佈局。
-
-## 驗證結果
-- 專案結構已透過 `flutter create` 正確生成。
-- `lib/main.dart` 已成功連結至自定義主題與儀表板。
-- 資料模型 `asset_models.dart` 已準確反映用戶對銀行與券商群組化的需求。
-- **UI 修正**: 已修復 `dashboard_screen.dart` 中的語法與參數錯誤。
-
-> [!IMPORTANT]
-> **環境疑難排解**：
-> 如果您在啟動 Chrome 時遇到 `Failed to launch browser` 或 `ERR_CONNECTION_REFUSED`（如您上傳的截圖所示），這通常是本地環境中 Chrome 驅動程式或通訊埠被佔用的問題。
-> 
-> **建議改用以下指令執行：**
-> ```bash
-> flutter run -d web-server --web-port 8080
-> ```
-> 然後在瀏覽器手動輸入 `http://localhost:8080` 即可看到畫面。
+### Visual Confirmation
+![New Master Icon](file:///C:/Users/XRSPACE/.gemini/antigravity/brain/902a9c28-4e91-4e59-9ea0-73d5b1491b7f/sun_treasure_icon_master_1773050762123.png)
